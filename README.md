@@ -2,6 +2,9 @@
 
 Este projeto implementa e compara diferentes versões do algoritmo QuickSort, analisando seu desempenho em diversos cenários. O código foi desenvolvido em Python e inclui uma implementação serial tradicional e uma versão paralela utilizando threads.
 
+## 🔗 Link do repositório
+https://github.com/AbreuGCA/Analise-de-Desempenho-dos-Algoritimos-de-Busca-BSMQ
+
 ## 📋 Estrutura do Projeto
 
 O projeto consiste em dois arquivos principais:
