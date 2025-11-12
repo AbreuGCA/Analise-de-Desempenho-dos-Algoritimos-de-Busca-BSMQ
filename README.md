@@ -228,6 +228,8 @@ Este projeto é destinado para fins educacionais e de pesquisa.
 ## 👥 Autores
 
 Projeto desenvolvido para análise comparativa de algoritmos de ordenação.
+Gabriel Abreu Cunha de Alencar
+Pedro Luis Costa Silva
 
 ---
 
