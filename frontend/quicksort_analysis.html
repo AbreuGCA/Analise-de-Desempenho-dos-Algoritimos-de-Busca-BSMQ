@@ -1,0 +1,470 @@
+
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+    <head><meta charset="utf-8"><title>Análise - QuickSort</title>
+    <style>
+        body{font-family:Arial;background:#f5f5f5;padding:20px}
+        .container{max-width:1100px;margin:auto;background:#fff;padding:20px;border-radius:8px}
+        table{width:100%;border-collapse:collapse}
+        th,td{padding:8px;border-bottom:1px solid #ddd}
+        th{background:#3498db;color:#fff}
+        .stats{background:#ecf0f1;padding:12px;border-radius:6px}
+    </style>
+    </head>
+    <body>
+    <div class="container">
+        <h1>📊 Análise de QuickSort</h1>
+        
+            <div class="stats">
+                <h3>📈 Estatísticas Gerais</h3>
+                <p><strong>Total de Amostras:</strong> 240</p>
+                <p><strong>Período de Execução:</strong> Wed Nov 12 08:20:42 BRT 2025 até Wed Nov 12 08:20:44 BRT 2025</p>
+                <p><strong>Melhor Tempo Serial:</strong> 0.20 ms</p>
+                <p><strong>Melhor Tempo Paralelo:</strong> 0.40 ms</p>
+                <p><strong>Speedup Médio:</strong> 1.69x</p>
+                <p><strong>Tempo Serial Médio:</strong> 11.54 ms</p>
+                <p><strong>Tempo Paralelo Médio:</strong> 6.84 ms</p>
+            </div>
+        
+        <div style="margin:20px 0"><img src="quicksort_analysis.png" style="max-width:100%"></div>
+        <h3>📋 Dados Resumidos</h3>
+        <table>
+            <tr><th>Tamanho</th><th>Tipo</th><th>Modo</th><th>Profundidade</th><th>Threads</th><th>Tempo Médio (ms)</th></tr>
+            
+                <tr>
+                    <td>10000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>0.49</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1.00</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>2.14</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>duplicates</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>0.24</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>13.04</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2.94</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>3.91</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>random</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>8.45</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1.73</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2.64</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>1.75</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>reversed</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2.21</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>2.58</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>2.08</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>2.82</td>
+                </tr>
+                
+                <tr>
+                    <td>10000</td>
+                    <td>sorted</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>2.82</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>0.90</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1.12</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>1.83</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>duplicates</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1.02</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>12.23</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>11.54</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>12.17</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>random</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>19.45</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>5.75</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4.93</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>4.84</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>reversed</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>9.44</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>5.95</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>4.94</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>4.76</td>
+                </tr>
+                
+                <tr>
+                    <td>50000</td>
+                    <td>sorted</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>12.89</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>1.63</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>1.98</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>duplicates</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>2.13</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>duplicates</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>1.95</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>27.54</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>23.48</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>random</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>20.90</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>random</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>32.17</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>10.33</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>8.30</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>reversed</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>8.99</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>reversed</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>19.90</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>14.08</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>9.73</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>sorted</td>
+                    <td>Paralela</td>
+                    <td>3</td>
+                    <td>8</td>
+                    <td>8.90</td>
+                </tr>
+                
+                <tr>
+                    <td>100000</td>
+                    <td>sorted</td>
+                    <td>Serial</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>27.96</td>
+                </tr>
+                
+        </table>
+        <p style="margin-top:16px"><a href="index.html">← Voltar</a></p>
+    </div>
+    </body></html>
+    
